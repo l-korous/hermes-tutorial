@@ -50,7 +50,7 @@ double CustomRightHandSide1::value(double x, double y) const
 
 Ord CustomRightHandSide1::value(Ord x, Ord y) const 
 {
-  return Ord(16);
+  return Ord(10);
 }
 
 CustomRightHandSide1::~CustomRightHandSide1() 
@@ -77,7 +77,7 @@ double CustomRightHandSide2::value(double x, double y) const
 
 Ord CustomRightHandSide2::value(Ord x, Ord y) const 
 {
-  return Ord(16);
+  return Ord(10);
 }
 
 CustomRightHandSide2::~CustomRightHandSide2() 
@@ -101,12 +101,12 @@ double ExactSolutionFitzHughNagumo1::value(double x, double y) const
 void ExactSolutionFitzHughNagumo1::derivatives(double x, double y, double& dx, double& dy) const 
 {
   dx = cef1->dx(x)*cef1->val(y);
-  dy = cef1->val(x)*cef1->ddxx(y);
+  dy = cef1->val(x)*cef1->dx(y);
 }
 
 Ord ExactSolutionFitzHughNagumo1::ord(Ord x, Ord y) const 
 {
-  return Ord(16);
+  return Ord(10);
 }
 
 ExactSolutionFitzHughNagumo1::~ExactSolutionFitzHughNagumo1() 
@@ -133,7 +133,7 @@ void ExactSolutionFitzHughNagumo2::derivatives(double x, double y, double& dx, d
 
 Ord ExactSolutionFitzHughNagumo2::ord(Ord x, Ord y) const 
 {
-  return Ord(16);
+  return Ord(10);
 }
 
 ExactSolutionFitzHughNagumo2::~ExactSolutionFitzHughNagumo2() 
@@ -160,7 +160,7 @@ double CustomResidual1::value(int n, double *wt, Func<double> *u_ext[], Func<dou
 Ord CustomResidual1::ord(int n, double *wt, Func<Ord> *u_ext[], Func<Ord> *v,
                          Geom<Ord> *e, ExtData<Ord> *ext) const 
 {
-  return Ord(16);
+  return Ord(10);
 }
 
 VectorFormVol<double>* CustomResidual1::clone() 
@@ -187,7 +187,7 @@ double CustomResidual2::value(int n, double *wt, Func<double> *u_ext[], Func<dou
 Ord CustomResidual2::ord(int n, double *wt, Func<Ord> *u_ext[], Func<Ord> *v,
                          Geom<Ord> *e, ExtData<Ord> *ext) const 
 {
-  return Ord(16);
+  return Ord(10);
 } 
 
 VectorFormVol<double>* CustomResidual2::clone() 
